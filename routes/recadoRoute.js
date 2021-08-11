@@ -8,4 +8,5 @@ const recadoController_1 = require("../controllers/recadoController");
 const router = express_1.default.Router();
 router.route("/recados").post(recadoController_1.storeRecado);
 router.route("/recados").get(recadoController_1.getRecados);
+router.route("/recados").delete(recadoController_1.delRecado);
 exports.default = router;
