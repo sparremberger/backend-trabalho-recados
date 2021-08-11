@@ -8,10 +8,12 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const connection_1 = __importDefault(require("./db/connection"));
 const recadoRoute_1 = __importDefault(require("./routes/recadoRoute"));
+var cors = require("cors");
 const app = express_1.default();
 dotenv_1.default.config();
 //connectDB
 const db = new connection_1.default().openConnection();
+app.use(cors());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use("/api", recadoRoute_1.default);
